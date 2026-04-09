@@ -1,0 +1,33 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`should match snapshot 1`] = `
+<div>
+  <div>
+    <h1
+      data-testid="first-name-title"
+    >
+       
+      Hugo.
+    </h1>
+    <h3>
+       
+      Jovel
+    </h3>
+    <p
+      class="mi-clase-favorita"
+    >
+      My favorite games are: 
+      GTA, FIFA, MINECRAFT
+    </p>
+    <p>
+      Am I a developer? 
+      Yes
+    </p>
+    <p
+      style="background-color: cyan; border-radius: 10px; padding: 10px; margin-top: 30px;"
+    >
+      {"zipCode":"1604","distrite":"El Rosario","department":"La Paz","country":"El Salvador"}
+    </p>
+  </div>
+</div>
+`;
