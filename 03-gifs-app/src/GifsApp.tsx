@@ -2,22 +2,22 @@ import GifList from "./gifs/components/GifList";
 import PreviousSearch from './gifs/components/PreviousSearch';
 import CustomHeader from "./shared/components/CustomHeader";
 import SearchBar from './shared/components/SearchBar';
-import useGifts from "./gifs/hooks/useGifts";
+import useGifs from "./gifs/hooks/useGifts";
 
-export const GiftsApp = () => {
+export const GifsApp = () => {
 
-  const { handleSearch, previousTerms, habdleTermCliked, gifs } = useGifts();
+  const { handleSearch, previousTerms, habdleTermCliked, gifs } = useGifs();
 
 
   
   return (
     <>
       {/*Header */}
-      <CustomHeader title="Buscador de Gifs" description="Descubre y comparte el Gift perfecto" />
+      <CustomHeader title="Buscador de Gifs" description="Descubre y comparte el Gif perfecto" />
 
 
       {/*Search*/}
-      <SearchBar placeholder="Buscar un Gift..." 
+      <SearchBar placeholder="Buscar un Gif..." 
       onQuery={handleSearch}/>
 
 
@@ -33,4 +33,4 @@ export const GiftsApp = () => {
   );
 };
 
-export default GiftsApp;
+export default GifsApp;
