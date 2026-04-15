@@ -6,6 +6,7 @@ export const gifsMock = [
     width: 360,
     height: 480
   },
+
   {
     id: 'B6SyssSlTgPXq',
     title: 'Dragonball Goku Super Saiyan GIF',
@@ -13,6 +14,7 @@ export const gifsMock = [
     width: 200,
     height: 200
   },
+
   {
     id: 'd5fMI9ftgQiGzoZoB9',
     title: '',
@@ -27,6 +29,7 @@ export const gifsMock = [
     width: 480,
     height: 270
   },
+  
   {
     id: 'e2tSgEk1k8Baw',
     title: 'goku GIF',
