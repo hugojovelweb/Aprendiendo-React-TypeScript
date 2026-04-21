@@ -21,5 +21,15 @@ describe("useGifs", () => {
 
        // await result.current.handleSearch("goku");
         });
+        expect(result.current.gifs.length).toBe(10);
     });
+
+    test('should return a list of gifs when handleTermClicked is called',async () => {
+        const { result } = renderHook(() => useGifs());
+
+        await act(async () => {            
+            await result.current.handleTermCliked("goku");
+        });
+        expect(result.current.gifs.length).toBe(10);
+    }); 
 });
