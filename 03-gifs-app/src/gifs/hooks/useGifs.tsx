@@ -2,8 +2,6 @@ import { getGifsByQuery } from "../actions/get-gifs-by-query.action";
 import { useRef, useState } from "react";
 import type { Gif } from "../interfaces/gif.interface";
 
-// const gifsCache: Record<string, Gif[]> = {};
-
 export const useGifs = () => {
   const [gifs, setGifs] = useState<Gif[]>([]);
   const [previousTerms, setPreviousTerms] = useState<string[]>([]);
@@ -17,24 +15,24 @@ export const useGifs = () => {
     }
     const gifs = await getGifsByQuery(term);
     setGifs(gifs);
-    //    gifsCache[term] = gifs;
+    gifsCache.current[term] = gifs;
   };
 
-  const handleSearch = async (query: string = "") => {
-    query = query.trim().toLocaleLowerCase();
+ const handleSearch = async (query: string = "") => {
+  query = query.trim().toLocaleLowerCase();
 
-    if (query.length === 0) return;
+  if (query.length === 0) return;
 
-    if (previousTerms.includes(query)) return;
+  if (previousTerms.includes(query)) return;
 
-    setPreviousTerms((prev) => [query, ...prev.slice(0, 8)]);
+  // ✅ Corregido: slice(0, 7) toma los primeros 7, más el nuevo = 8 total
+  setPreviousTerms((prev) => [query, ...prev.slice(0, 7)]);
 
-    const gifs = await getGifsByQuery(query);
-    setGifs(gifs);
+  const gifs = await getGifsByQuery(query);
+  setGifs(gifs);
 
-    gifsCache.current[query] = gifs;
-    //console.log(gifsCache);
-  };
+  gifsCache.current[query] = gifs; // ✅ Descomentar esta línea
+};
 
   return {
     //Properties
