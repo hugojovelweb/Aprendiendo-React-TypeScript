@@ -4,13 +4,13 @@ import type { Gif } from "../interfaces/gif.interface";
 
 // const gifsCache: Record<string, Gif[]> = {};
 
-export const useGifts = () => {
+export const useGifs = () => {
   const [gifs, setGifs] = useState<Gif[]>([]);
   const [previousTerms, setPreviousTerms] = useState<string[]>([]);
 
   const gifsCache = useRef<Record<string, Gif[]>>({});
 
-  const habdleTermCliked = async (term: string) => {
+  const handleTermCliked = async (term: string) => {
     if (gifsCache.current[term]) {
       setGifs(gifsCache.current[term]);
       return;
@@ -33,7 +33,7 @@ export const useGifts = () => {
     setGifs(gifs);
 
     gifsCache.current[query] = gifs;
-    console.log(gifsCache);
+    //console.log(gifsCache);
   };
 
   return {
@@ -43,8 +43,8 @@ export const useGifts = () => {
     // Methods
     previousTerms,
     handleSearch,
-    habdleTermCliked,
+    handleTermCliked,
   };
 };
 
-export default useGifts;
+export default useGifs;
