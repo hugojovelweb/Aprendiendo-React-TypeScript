@@ -5,7 +5,7 @@ import SearchBar from "./shared/components/SearchBar";
 import useGifs from "./gifs/hooks/useGifs";
 
 export const GifsApp = () => {
-  const { handleSearch, previousTerms, habdleTermCliked, gifs } = useGifs();
+  const { handleSearch, previousTerms, handleTermCliked, gifs } = useGifs();
 
   return (
     <>
@@ -21,7 +21,7 @@ export const GifsApp = () => {
       {/*Busquedas Previas*/}
       <PreviousSearch
         searches={previousTerms}
-        onLabelClicked={habdleTermCliked}
+        onLabelClicked={handleTermCliked}
       />
 
       {/*Gifs*/}
