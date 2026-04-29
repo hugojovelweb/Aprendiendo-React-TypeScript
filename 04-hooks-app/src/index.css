@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+scrollbar {
+  @apply scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-gray-900;
+}
+
 .bg-gradient {
   @apply bg-gradient-to-br from-slate-900 via-gray-900 to-slate-800 min-h-screen flex items-center justify-center p-4 text-white;
 }
