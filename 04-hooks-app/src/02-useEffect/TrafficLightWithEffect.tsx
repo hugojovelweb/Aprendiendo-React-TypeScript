@@ -17,7 +17,6 @@ export const TrafficLightWithEffect = () => {
     
 
     const intervalId = setInterval(() => {
-      console.log('setInterval llamado');
       setCountdown((prev) => prev - 1);
     }, 1000);
 
