@@ -25,6 +25,22 @@ export const TrafficLightWithEffect = () => {
     clearInterval(intervalId);
   };
   }, [countdown]);
+
+  //Change light color effect
+  useEffect(() => {
+    if (countdown === 0) {
+      if (light === "red") {
+        setLight("green");
+        setCountdown(5);
+      } else if (light === "green") {
+        setLight("yellow");
+        setCountdown(2);
+      } else if (light === "yellow") {
+        setLight("red");
+        setCountdown(5);
+      }
+    }
+  }, [countdown, light]);
  
 
   return (
