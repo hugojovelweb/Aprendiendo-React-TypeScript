@@ -51,6 +51,9 @@ export const TrafficLightWithEffect = () => {
           Semáforo con useEffect</h1>
 
         <h2 className="text-white text-xl"> Countdown {countdown}</h2>
+        <div className="w-64 bg-gray-700 rounded-full h-2">
+          <div className="bg-blue-500 h-2 rounded-full" style={{ width: `${(countdown / 5) * 100}%` }}></div>
+        </div>
 
         <div
           className={`w-32 h-32 ${
