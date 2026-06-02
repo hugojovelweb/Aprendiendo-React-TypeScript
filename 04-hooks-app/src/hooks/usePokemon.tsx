@@ -16,7 +16,7 @@ export const usePokemon = ({id}: Props) => {
 
     const getPokemonById = async (id: number) => {
 
-        const response = await fetch(`https://pokeapi.co/api/v2/pokemon/1${id}`);
+        const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
         const data = await response.json();
 
         setPokemon({
