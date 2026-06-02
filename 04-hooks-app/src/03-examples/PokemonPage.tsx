@@ -13,7 +13,7 @@ export const PokemonPage = () => {
       <h3 className="text-xl font-bold text-white">#{counter} {pokemon?.name}</h3>
       <img
         src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${counter}.png`}
-        alt=""
+        alt="{pokemon?.name}"
       />
 
       <div className="flex gap-2">
