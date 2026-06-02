@@ -28,9 +28,8 @@ export const usePokemon = ({id}: Props) => {
     }
 
    useEffect(() => {
-    fetch(' ...')
-
-    }, []); 
+    getPokemonById(id);
+    }, [id]); 
   
 
     return {
