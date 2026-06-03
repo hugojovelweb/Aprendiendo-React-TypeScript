@@ -4,7 +4,7 @@ import { useRef } from "react";
 export const FocusScreen = () => {
     const inputRef = useRef<HTMLInputElement>(null); // Crea variable inputRef con valor inicial null
 
-    const onClick = () => {
+    const handleClick = () => {
 
         console.log(inputRef.current?.value); // Si inputRef.current no es null, muestra el valor del input en la consola
         inputRef.current?.select(); // Si inputRef.current no es null, selecciona el texto del input
@@ -21,7 +21,7 @@ export const FocusScreen = () => {
         autoFocus  placeholder="Escribe algo..." 
         />
 
-        <button className="bg-blue-500 text-white px-4 py-2 rounded-md cursor-pointer" onClick={onClick}>
+        <button className="bg-blue-500 text-white px-4 py-2 rounded-md cursor-pointer" onClick={handleClick}>
          Set Focus
         </button>
 
