@@ -19,6 +19,10 @@ export const TasksApp = () => {
 
   const addTodo = () => {
     if (inputValue.length === 0) return;
+
+    const newTodo: Todo = {
+      
+    }
     
 
   };
