@@ -28,6 +28,7 @@ export const TasksApp = () => {
 
     setTodos([...todos, newTodo]);
     //setTodos((prev) => [...prev, newTodo]); // Otra forma de hacerlo
+    setInputValue('');
     
 
   };
