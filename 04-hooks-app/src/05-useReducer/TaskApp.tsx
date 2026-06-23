@@ -34,7 +34,13 @@ export const TasksApp = () => {
   };
 
   const toggleTodo = (id: number) => {
-    console.log('Cambiar de true a false', id);
+    const updatedTodos = todos.map((todo) =>{
+      if (todo.id === id) {
+        return { ...todo, completed: !todo.completed };
+      }
+      return todo;
+    });
+    setTodos(updatedTodos);
 
   };
 
