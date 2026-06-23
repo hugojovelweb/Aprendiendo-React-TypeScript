@@ -21,7 +21,9 @@ export const TasksApp = () => {
     if (inputValue.length === 0) return;
 
     const newTodo: Todo = {
-      
+      id: Date.now(),
+      text: inputValue,
+      completed: false,
     }
     
 
