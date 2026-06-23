@@ -44,7 +44,10 @@ export const TasksApp = () => {
   };
 
   const handleKeyPress = (e: React.KeyboardEvent) => {
-    console.log('Presiono enter');
+    console.log({ key: e.key });
+    if (e.key === 'Enter') {
+      addTodo();
+    }
 
   };
 
