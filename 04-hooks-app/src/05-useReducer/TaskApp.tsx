@@ -26,7 +26,8 @@ export const TasksApp = () => {
       completed: false,
     }
 
-    setTodos([...todos, newTodo]);
+    //setTodos([...todos, newTodo]);
+    setTodos((prev) => [...prev, newTodo]);
     
 
   };
