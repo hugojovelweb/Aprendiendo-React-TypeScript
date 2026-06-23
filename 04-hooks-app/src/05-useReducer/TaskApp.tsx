@@ -25,6 +25,8 @@ export const TasksApp = () => {
       text: inputValue,
       completed: false,
     }
+
+    setTodos([...todos, newTodo]);
     
 
   };
