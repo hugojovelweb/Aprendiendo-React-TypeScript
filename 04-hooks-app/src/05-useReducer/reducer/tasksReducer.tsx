@@ -24,6 +24,9 @@ export const tasksReducer = (
         switch (action.type) {
             case 'ADD_TODO':
                 return state; 
+            
+            case 'TOGGLE_TODO':
+                return state;
         }
                 
 
