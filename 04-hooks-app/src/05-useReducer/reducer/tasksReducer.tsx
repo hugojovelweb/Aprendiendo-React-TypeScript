@@ -18,6 +18,17 @@ export type TaskAction =
 
 export const tasksReducer = (
     state: TaskState,
-     action: TaskAction): TaskState => {
+     action: TaskAction): 
+     TaskState => {
+
+        switch (action.type) {
+            case 'ADD_TODO':
+                return state; 
+        }
+                
+
+
+
+
     return state;
 };
