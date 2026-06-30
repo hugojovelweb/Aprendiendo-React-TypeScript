@@ -27,6 +27,9 @@ export const tasksReducer = (
             
             case 'TOGGLE_TODO':
                 return state;
+
+            case 'DELETE_TODO':
+                return state;
         }
                 
 
