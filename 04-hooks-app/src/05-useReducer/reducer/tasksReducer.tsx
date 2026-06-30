@@ -18,26 +18,46 @@ export type TaskAction =
 
 export const tasksReducer = (
     state: TaskState,
-     action: TaskAction): 
-     TaskState => {
+    action: TaskAction):
+    TaskState => {
 
-        switch (action.type) {
-            case 'ADD_TODO':
-                return state; 
-            
-            case 'TOGGLE_TODO':
-                return state;
+    switch (action.type) {
+        case 'ADD_TODO': {
+            const newTodo: Todo = {
+                id: Date.now(),
+                text: action.payload,
+                completed: false,
+            }
+            //No se debe hacer 
+            //state.todos.push(newTodo);
 
-            case 'DELETE_TODO':
-                return state;
-
-            default:
-                return state;
+            return {
+                ...state,
+                todos: [...state.todos, newTodo],
+        };
         }
-                
 
+        case 'DELETE_TODO':
+            return {
+                ...state,
+                todos: state.todos.filter((todo) => todo.id !== action.payload),
+            };
 
+        case 'TOGGLE_TODO':
+            const updatedTodos = state.todos.map((todo) => {
+                if (todo.id === action.payload) {
+                    return { ...todo, completed: !todo.completed };
+                }
+                return todo;
+            });
+            return {
+                ...state,
+                todos: updatedTodos,
+            };
 
+        default:
+            return state;
+    }
 
     return state;
 };

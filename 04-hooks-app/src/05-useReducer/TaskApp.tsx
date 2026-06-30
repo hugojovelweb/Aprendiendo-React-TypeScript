@@ -22,7 +22,7 @@ export const TasksApp = () => {
 
     const newTodo: Todo = {
       id: Date.now(),
-      text: inputValue,
+      text: inputValue.trim(),
       completed: false,
     }
 
