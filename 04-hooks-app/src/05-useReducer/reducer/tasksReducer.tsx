@@ -30,6 +30,9 @@ export const tasksReducer = (
 
             case 'DELETE_TODO':
                 return state;
+
+            default:
+                return state;
         }
                 
 
