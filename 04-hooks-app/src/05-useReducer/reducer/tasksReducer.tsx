@@ -34,13 +34,23 @@ export const tasksReducer = (
             return {
                 ...state,
                 todos: [...state.todos, newTodo],
-        };
+                lenght: state.todos.length + 1,
+                pending: state.pending + 1,
+            };
         }
 
         case 'DELETE_TODO':
+            const currentTodos = state.todos.filter((todo) => todo.id !== action.payload);
+
+            // const completedTodos = currentTodos.filter((todo) => todo.completed).length;
+            //const pendingTodos = currentTodos.filter((todo) => !todo.completed).length;
+
             return {
                 ...state,
-                todos: state.todos.filter((todo) => todo.id !== action.payload),
+                todos: currentTodos,
+                lenght: currentTodos.length,
+                completed: currentTodos.filter((todo) => todo.completed).length,
+                pending: currentTodos.filter((todo) => !todo.completed).length, 
             };
 
         case 'TOGGLE_TODO':
@@ -53,6 +63,8 @@ export const tasksReducer = (
             return {
                 ...state,
                 todos: updatedTodos,
+                completed: updatedTodos.filter((todo) => todo.completed).length,
+                pending: updatedTodos.filter((todo) => !todo.completed).length,
             };
 
         default:
