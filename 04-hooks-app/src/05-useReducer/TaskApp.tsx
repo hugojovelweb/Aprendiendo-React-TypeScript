@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useReducer, useState } from 'react';
 
 import { Plus, Trash2, Check } from 'lucide-react';
 
@@ -14,8 +14,10 @@ interface Todo {
 }
 
 export const TasksApp = () => {
-  const [todos, setTodos] = useState<Todo[]>([]);
   const [inputValue, setInputValue] = useState('');
+  // const [todos, setTodos] = useState<Todo[]>([]);
+  const [] = useReducer()
+  
 
   const addTodo = () => {
     if (inputValue.length === 0) return;
