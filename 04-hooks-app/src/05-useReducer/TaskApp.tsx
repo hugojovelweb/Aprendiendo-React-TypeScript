@@ -8,11 +8,7 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { getTaskInitialState, tasksReducer } from './reducer/tasksReducer';
 
-interface Todo {
-  id: number;
-  text: string;
-  completed: boolean;
-}
+
 
 export const TasksApp = () => {
   const [inputValue, setInputValue] = useState('');
