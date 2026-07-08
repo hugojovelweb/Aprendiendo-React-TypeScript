@@ -30,15 +30,8 @@ export const TasksApp = () => {
   };
 
   const toggleTodo = (id: number) => {
-    const updatedTodos = todos.map((todo) =>{
-      if (todo.id === id) {
-        return { ...todo, completed: !todo.completed };
-      }
-      return todo;
-    });
-    setTodos(updatedTodos);
-
-  };
+    dispatch({ type: 'TOGGLE_TODO', payload: id });
+  }; 
 
   const deleteTodo = (id: number) => {
     const updatedTodos = todos.filter((todo) => todo.id !== id);
