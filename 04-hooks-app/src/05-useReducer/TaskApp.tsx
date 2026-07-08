@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { getTaskInitialState, tasksReducer } from './reducer/tasksReducer';
 
 interface Todo {
   id: number;
@@ -16,7 +17,7 @@ interface Todo {
 export const TasksApp = () => {
   const [inputValue, setInputValue] = useState('');
   // const [todos, setTodos] = useState<Todo[]>([]);
-  const [] = useReducer()
+  const [] = useReducer( tasksReducer, getTaskInitialState() );
   
 
   const addTodo = () => {
