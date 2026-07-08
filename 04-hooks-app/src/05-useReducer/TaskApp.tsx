@@ -61,8 +61,10 @@ export const TasksApp = () => {
 
   };
 
-  const completedCount = todos.filter((todo) => todo.completed).length;
-  const totalCount = todos.length;
+  const {todos, completed: completedCount, lenght: totalCount} = getTaskInitialState();
+
+  // const completedCount = todos.filter((todo) => todo.completed).length;
+  // const totalCount = todos.length;
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 p-4">
