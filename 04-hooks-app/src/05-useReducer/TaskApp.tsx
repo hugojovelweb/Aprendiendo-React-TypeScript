@@ -17,20 +17,13 @@ interface Todo {
 export const TasksApp = () => {
   const [inputValue, setInputValue] = useState('');
   // const [todos, setTodos] = useState<Todo[]>([]);
-  const [] = useReducer( tasksReducer, getTaskInitialState() );
+  const [state, dispatch] = useReducer( tasksReducer, getTaskInitialState() );
   
 
   const addTodo = () => {
     if (inputValue.length === 0) return;
-
-    const newTodo: Todo = {
-      id: Date.now(),
-      text: inputValue.trim(),
-      completed: false,
-    }
-
-    setTodos([...todos, newTodo]);
-    //setTodos((prev) => [...prev, newTodo]); // Otra forma de hacerlo
+    dispatch({ type: 'ADD_TODO', payload: inputValue });
+    
     setInputValue('');
     
 
