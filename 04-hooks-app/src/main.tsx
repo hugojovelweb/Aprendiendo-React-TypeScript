@@ -2,6 +2,7 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import { TasksApp } from './05-useReducer/TaskApp';
+import { ScrambleWords } from './05-useReducer/ScrumbleWords';
 
 
 
@@ -21,7 +22,8 @@ createRoot(document.getElementById('root')!).render(
     {/* <TrafficLightWithHook/> */}
     {/* <PokemonPage /> */}
     {/* <FocusScreen /> */}
-    <TasksApp />
+    {/* <TasksApp /> */}
+    <ScrambleWords /> 
 
   </StrictMode>,
 )
