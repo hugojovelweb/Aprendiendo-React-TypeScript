@@ -18,7 +18,13 @@ export type TaskAction =
     | { type: 'TOGGLE_TODO', payload: number }
     | { type: 'DELETE_TODO', payload: number }
 
-    
+    const TodoSchema = z.object({
+        id: z.number(),
+        text: z.string(),
+        completed: z.boolean(),
+    });
+
+
 
     export const getTaskInitialState = (): TaskState => {
 
