@@ -40,6 +40,12 @@ export type TaskAction =
             return JSON.parse(localStorageState);
         }
 
+        //Validar mediante Zod 
+        const result = TaskStateSchema.safeParse(localStorageState);
+        if (!result.success) {
+            console.error('Invalid state in localStorage:', result.error);
+        }
+
 
         return {
             todos: [],
