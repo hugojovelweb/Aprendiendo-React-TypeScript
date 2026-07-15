@@ -24,6 +24,13 @@ export type TaskAction =
         completed: z.boolean(),
     });
 
+    const TaskStateSchema = z.object({
+        todos: z.array(TodoSchema),
+        lenght: z.number(),
+        completed: z.number(),
+        pending: z.number(),
+    });
+
 
 
     export const getTaskInitialState = (): TaskState => {
