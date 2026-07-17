@@ -60,7 +60,9 @@ export const ScrambleWords = () => {
     // Previene el refresh de la página
     e.preventDefault();
     // Implementar lógica de juego
-    console.log('Intento de adivinanza:', guess, currentWord);
+    //console.log('Intento de adivinanza:', guess, currentWord);
+
+    
 
   };
 
