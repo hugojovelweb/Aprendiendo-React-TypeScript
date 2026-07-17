@@ -63,9 +63,13 @@ export const ScrambleWords = () => {
     //console.log('Intento de adivinanza:', guess, currentWord);
 
     if (guess === currentWord) {
-      console.log('¡Adivinaste la palabra!');
+     const newWords = words.slice(1);
+      setWords(newWords);
       setPoints(points + 1);
-      // Aquí se puede agregar lógica para pasar a la siguiente palabra
+      setCurrentWord(newWords[0]);
+      setScrambledWord(scrambleWord(newWords[0]));
+      setGuess('');
+      return;
     }
 
 
