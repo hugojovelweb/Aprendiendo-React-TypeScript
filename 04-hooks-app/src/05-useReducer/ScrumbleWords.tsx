@@ -7,8 +7,8 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent } from '@/components/ui/card';
 import { SkipForward, Play } from 'lucide-react';
-
 import confetti from 'canvas-confetti';
+
 
 
 const GAME_WORDS = [
@@ -67,11 +67,13 @@ export const ScrambleWords = () => {
 
     if (guess === currentWord) {
       const newWords = words.slice(1);
+
       confetti({
         particleCount: 100,
         spread: 70,
         origin: { y: 0.6 },
       });
+
       setWords(newWords);
       setPoints(points + 1);
       setCurrentWord(newWords[0]);
@@ -80,7 +82,12 @@ export const ScrambleWords = () => {
       return;
     }
 
+    setErrorCounter(errorCounter + 1);
+    setGuess('');
 
+    if (errorCounter + 1 >= maxAllowErrors) {
+      setIsGameOver(true);
+    }
 
   };
 
