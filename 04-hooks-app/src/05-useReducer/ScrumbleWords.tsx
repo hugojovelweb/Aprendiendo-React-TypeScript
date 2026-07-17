@@ -110,10 +110,11 @@ export const ScrambleWords = () => {
     setPoints(0);
     setErrorCounter(0);
     setGuess('');
-    setWords(newArray[0]);
+    setWords(newArray);
     setCurrentWord(newArray[0]);
     setIsGameOver(false);
     setSkipCounter(0);
+    setScrambledWord(scrambleWord(newArray[0]));
   };
 
   //! Si ya no hay palabras para jugar, se muestra el mensaje de fin de juego
