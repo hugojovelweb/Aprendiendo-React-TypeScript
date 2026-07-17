@@ -106,11 +106,12 @@ export const ScrambleWords = () => {
   };
 
   const handlePlayAgain = () => {
+    const newArray = shuffleArray(GAME_WORDS);
     setPoints(0);
     setErrorCounter(0);
     setGuess('');
-    setWords(shuffleArray(GAME_WORDS));
-    setCurrentWord(words[0]);
+    setWords(newArray[0]);
+    setCurrentWord(newArray[0]);
     setIsGameOver(false);
     setSkipCounter(0);
   };
