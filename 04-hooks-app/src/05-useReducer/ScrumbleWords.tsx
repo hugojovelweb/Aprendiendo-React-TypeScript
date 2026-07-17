@@ -88,13 +88,21 @@ export const ScrambleWords = () => {
     if (errorCounter + 1 >= maxAllowErrors) {
       setIsGameOver(true);
     }
-
   };
 
   const handleSkip = () => {
-    console.log('Palabra saltada');
+    if (skipCounter + 1 >= maxSkips) {
+      console.log('No puedes saltar más palabras');
+      return;
 
+      const updatedWords = words.slice(1);
 
+      setSkipCounter(skipCounter + 1);
+      setWords(updatedWords);
+      setCurrentWord(updatedWords[0]);
+      setScrambledWord(scrambleWord(updatedWords [0]));
+      setGuess('');
+    }
   };
 
   const handlePlayAgain = () => {
