@@ -7,6 +7,13 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent } from '@/components/ui/card';
 import { SkipForward, Play } from 'lucide-react';
+import conffeti from 'canvas-confetti';
+
+conffeti({
+  particleCount: 100,
+  spread: 70,
+  origin: { y: 0.6 },
+});
 
 const GAME_WORDS = [
   'REACT',
