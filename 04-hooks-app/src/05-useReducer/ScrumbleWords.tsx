@@ -7,13 +7,9 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent } from '@/components/ui/card';
 import { SkipForward, Play } from 'lucide-react';
-import conffeti from 'canvas-confetti';
 
-conffeti({
-  particleCount: 100,
-  spread: 70,
-  origin: { y: 0.6 },
-});
+import confetti from 'canvas-confetti';
+
 
 const GAME_WORDS = [
   'REACT',
@@ -70,7 +66,12 @@ export const ScrambleWords = () => {
     //console.log('Intento de adivinanza:', guess, currentWord);
 
     if (guess === currentWord) {
-     const newWords = words.slice(1);
+      const newWords = words.slice(1);
+      confetti({
+        particleCount: 100,
+        spread: 70,
+        origin: { y: 0.6 },
+      });
       setWords(newWords);
       setPoints(points + 1);
       setCurrentWord(newWords[0]);
@@ -86,17 +87,17 @@ export const ScrambleWords = () => {
   const handleSkip = () => {
     console.log('Palabra saltada');
 
-    
+
   };
 
   const handlePlayAgain = () => {
     console.log('Jugar de nuevo');
-    
+
   };
 
   //! Si ya no hay palabras para jugar, se muestra el mensaje de fin de juego
   if (words.length === 0) {
-    
+
     return (
       <div className="min-h-screen bg-gradient-to-br from-purple-100 via-blue-50 to-indigo-100 flex items-center justify-center p-4">
         <div className="w-full max-w-md mx-auto">
