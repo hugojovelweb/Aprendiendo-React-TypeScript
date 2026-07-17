@@ -106,8 +106,13 @@ export const ScrambleWords = () => {
   };
 
   const handlePlayAgain = () => {
-    console.log('Jugar de nuevo');
-
+    setPoints(0);
+    setErrorCounter(0);
+    setGuess('');
+    setWords(shuffleArray(GAME_WORDS));
+    setCurrentWord(words[0]);
+    setIsGameOver(false);
+    setSkipCounter(0);
   };
 
   //! Si ya no hay palabras para jugar, se muestra el mensaje de fin de juego
