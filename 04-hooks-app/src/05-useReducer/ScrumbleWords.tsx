@@ -62,7 +62,13 @@ export const ScrambleWords = () => {
     // Implementar lógica de juego
     //console.log('Intento de adivinanza:', guess, currentWord);
 
-    
+    if (guess === currentWord) {
+      console.log('¡Adivinaste la palabra!');
+      setPoints(points + 1);
+      // Aquí se puede agregar lógica para pasar a la siguiente palabra
+    }
+
+
 
   };
 
