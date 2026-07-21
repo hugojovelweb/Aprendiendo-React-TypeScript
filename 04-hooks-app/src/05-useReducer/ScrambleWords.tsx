@@ -8,27 +8,25 @@ import { Input } from '@/components/ui/input';
 import { Card, CardContent } from '@/components/ui/card';
 import { SkipForward, Play } from 'lucide-react';
 import confetti from 'canvas-confetti';
-import { getInitialState, scrambleWordReducer, } from './reducer/scrambleWordReducer';
+import { getInitialState, scrambleWordsReducer, } from './reducer/scrambleWordReducer';
 
 
 export const ScrambleWords = () => {
 
-  const [state, dispatch] = useReducer(scrambleWordReducer, getInitialState()); { };
+  const [state, dispatch] = useReducer(scrambleWordsReducer, getInitialState()); { };
 
-  const { words,
-     currentWord, 
-     scrambledWord, 
-     guess, points, 
-     errorCounter, 
-     maxAllowErrors, 
-     skipCounter, 
-     maxSkips,
-      isGameOver, 
-      totalWords 
-    } = state;
-
-
-
+  const {
+    words,
+    currentWord,
+    scrambledWord,
+    guess, points,
+    errorCounter,
+    maxAllowErrors,
+    skipCounter,
+    maxSkips,
+    isGameOver,
+    totalWords
+  } = state;
 
   // const [words, setWords] = useState(shuffleArray(GAME_WORDS));
 
@@ -185,10 +183,10 @@ export const ScrambleWords = () => {
                     id="guess"
                     type="text"
                     value={guess}
-                    onChange={(e) =>{
+                    onChange={(e) => {
                       // setGuess(e.target.value.toUpperCase().trim())
-                      console.log('Input change:', e.target.value.toUpperCase().trim())
-                      }
+                      console.log( e.target.value)
+                    }
                     }
                     placeholder="Ingresa tu palabra..."
                     className="text-center text-lg font-semibold h-12 border-2 border-indigo-200 focus:border-indigo-500 transition-colors"
