@@ -1,6 +1,6 @@
 
 
-export interface ScrambleWordState {
+export interface ScrambleWordsState {
     currentWord: string;
     errorCounter: number;
     guess: string;
@@ -11,9 +11,10 @@ export interface ScrambleWordState {
     scrambledWord: string;
     skipCounter: number;
     words: string[];
-}; 
+    totalWords: number;
+};
 
-export type ScrambleWordAction =
+export type ScrambleWordsAction =
     | { type: 'SET_CURRENT_WORD'; payload: string }
     | { type: 'SET_ERROR_COUNTER'; payload: number }
     | { type: 'SET_GUESS'; payload: string }
@@ -27,35 +28,72 @@ export type ScrambleWordAction =
 
 
 
-    const GAME_WORDS = [
-      'REACT',
-      'JAVASCRIPT',
-      'TYPESCRIPT',
-      'HTML',
-      'ANGULAR',
-      'SOLID',
-      'NODE',
-      'VUEJS',
-      'SVELTE',
-      'EXPRESS',
-      'MONGODB',
-      'POSTGRES',
-      'DOCKER',
-      'KUBERNETES',
-      'WEBPACK',
-      'VITE',
-      'TAILWIND',
-    ];
+const GAME_WORDS = [
+    'REACT',
+    'JAVASCRIPT',
+    'TYPESCRIPT',
+    'HTML',
+    'ANGULAR',
+    'SOLID',
+    'NODE',
+    'VUEJS',
+    'SVELTE',
+    'EXPRESS',
+    'MONGODB',
+    'POSTGRES',
+    'DOCKER',
+    'KUBERNETES',
+    'WEBPACK',
+    'VITE',
+    'TAILWIND',
+];
 
-    // Esta función mezcla el arreglo para que siempre sea aleatorio
-    const shuffleArray = (array: string[]) => {
-      return array.sort(() => Math.random() - 0.5);
-    };
-    
-    // Esta función mezcla las letras de la palabra
-    const scrambleWord = (word: string = '') => {
-      return word
+// Esta función mezcla el arreglo para que siempre sea aleatorio
+const shuffleArray = (array: string[]) => {
+    return array.sort(() => Math.random() - 0.5);
+};
+
+// Esta función mezcla las letras de la palabra
+const scrambleWord = (word: string = '') => {
+    return word
         .split('')
         .sort(() => Math.random() - 0.5)
         .join('');
+};
+
+
+export const getInitialState = (): ScrambleWordsState => {
+    const shuffledWords = shuffleArray([...GAME_WORDS]);
+    return {
+        currentWord: shuffledWords[0],
+        errorCounter: 0,
+        guess: '',
+        isGameOver: false,
+        maxAllowErrors: 3,
+        maxSkips: 3,
+        points: 0,
+        scrambledWord: scrambleWord(shuffledWords[0]),
+        skipCounter: 0,
+        words: shuffledWords,
+        totalWords: shuffledWords.length, 
     };
+};
+
+export type ScrambleWordsAction =
+    | { type: 'SET_CURRENT_WORD'; payload: string }
+    | { type: 'SET_ERROR_COUNTER'; payload: number }
+    | { type: 'SET_GUESS'; payload: string }
+    | { type: 'SET_IS_GAME_OVER'; payload: boolean }
+    | { type: 'SET_MAX_ALLOW_ERRORS'; payload: number }
+    | { type: 'SET_MAX_SKIPS'; payload: number }
+    | { type: 'SET_POINTS'; payload: number }
+    | { type: 'SET_SCRAMBLED_WORD'; payload: string }
+    | { type: 'SET_SKIP_COUNTER'; payload: number }
+    | { type: 'SET_WORDS'; payload: string[] };
+
+export const scrambleWordReducer = (state: ScrambleWordsState, action: ScrambleWordsAction): ScrambleWordsState => {
+    switch (action.type) {
+        default:
+            return state;
+    };
+};
