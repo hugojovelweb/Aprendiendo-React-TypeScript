@@ -102,7 +102,7 @@ export const ScrambleWords = () => {
       setCurrentWord(updatedWords[0]);
       setScrambledWord(scrambleWord(updatedWords [0]));
       setGuess('');
-    }
+    };
   };
 
   const handlePlayAgain = () => {
@@ -119,6 +119,11 @@ export const ScrambleWords = () => {
 
   //! Si ya no hay palabras para jugar, se muestra el mensaje de fin de juego
   if (words.length === 0) {
+    confetti({
+      particleCount: 200,
+      spread: 100,
+      origin: { y: 0.6 },
+    });
 
     return (
       <div className="min-h-screen bg-gradient-to-br from-purple-100 via-blue-50 to-indigo-100 flex items-center justify-center p-4">
