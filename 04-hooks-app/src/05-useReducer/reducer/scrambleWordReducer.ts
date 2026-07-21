@@ -25,4 +25,37 @@ export type ScrambleWordAction =
     | { type: 'SET_SKIP_COUNTER'; payload: number }
     | { type: 'SET_WORDS'; payload: string[] };
 
+
+
+    const GAME_WORDS = [
+      'REACT',
+      'JAVASCRIPT',
+      'TYPESCRIPT',
+      'HTML',
+      'ANGULAR',
+      'SOLID',
+      'NODE',
+      'VUEJS',
+      'SVELTE',
+      'EXPRESS',
+      'MONGODB',
+      'POSTGRES',
+      'DOCKER',
+      'KUBERNETES',
+      'WEBPACK',
+      'VITE',
+      'TAILWIND',
+    ];
+
+    // Esta función mezcla el arreglo para que siempre sea aleatorio
+    const shuffleArray = (array: string[]) => {
+      return array.sort(() => Math.random() - 0.5);
+    };
     
+    // Esta función mezcla las letras de la palabra
+    const scrambleWord = (word: string = '') => {
+      return word
+        .split('')
+        .sort(() => Math.random() - 0.5)
+        .join('');
+    };
