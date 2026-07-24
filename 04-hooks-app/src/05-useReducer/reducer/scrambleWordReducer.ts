@@ -142,8 +142,9 @@ export const scrambleWordsReducer = (
             } else {
                 return {
                     ...state,
-                    errorCounter: state.errorCounter + 1,
                     guess: '',
+                    errorCounter: state.errorCounter + 1,
+                    isGameOver: state.errorCounter + 1 >= state.maxAllowErrors,
                 };
             }
     };

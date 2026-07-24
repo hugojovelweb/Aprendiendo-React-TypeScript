@@ -45,6 +45,8 @@ export const ScrambleWords = () => {
   const handleGuessSubmit = (e: React.FormEvent) => {
     //   // Previene el refresh de la página
     e.preventDefault();
+
+    dispatch({ type: 'CHECK_ANSWER' });
     //   // Implementar lógica de juego
     //   //console.log('Intento de adivinanza:', guess, currentWord);
 
