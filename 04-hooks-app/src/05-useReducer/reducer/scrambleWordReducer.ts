@@ -85,15 +85,7 @@ export type ScrambleWordsAction =
 | { type: 'SKIP_WORD' }
 
 
-    | { type: 'SET_CURRENT_WORD'; payload: string }
-    | { type: 'SET_ERROR_COUNTER'; payload: number }
-    | { type: 'SET_IS_GAME_OVER'; payload: boolean }
-    | { type: 'SET_MAX_ALLOW_ERRORS'; payload: number }
-    | { type: 'SET_MAX_SKIPS'; payload: number }
-    | { type: 'SET_POINTS'; payload: number }
-    | { type: 'SET_SCRAMBLED_WORD'; payload: string }
-    //| { type: 'SET_SKIP_COUNTER'; payload: number }
-    | { type: 'SET_WORDS'; payload: string[] };
+  
 
 export const scrambleWordsReducer = (
     state: ScrambleWordsState,
@@ -137,40 +129,6 @@ export const scrambleWordsReducer = (
                 scrambledWord: scrambleWord(updateWords[0]),
                 guess: '',
             };
-
-
-
-
-
-
-        case 'SET_CURRENT_WORD':
-            return { ...state, currentWord: action.payload };
-
-        case 'SET_ERROR_COUNTER':
-            return { ...state, errorCounter: action.payload };
-
-
-        case 'SET_IS_GAME_OVER':
-            return { ...state, isGameOver: action.payload };
-
-        case 'SET_MAX_ALLOW_ERRORS':
-            return { ...state, maxAllowErrors: action.payload };
-
-        case 'SET_MAX_SKIPS':
-            return { ...state, maxSkips: action.payload };
-
-        case 'SET_POINTS':
-            return { ...state, points: action.payload };
-
-        case 'SET_SCRAMBLED_WORD':
-            return { ...state, scrambledWord: action.payload };
-
-        // case 'SET_SKIP_COUNTER':
-        //     return { ...state, skipCounter: action.payload };
-
-        case 'SET_WORDS':
-            return { ...state, words: action.payload };
-
         
     };
 };
