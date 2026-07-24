@@ -95,6 +95,8 @@ export const scrambleWordsReducer = (
     state: ScrambleWordsState,
     action: ScrambleWordsAction ) => { 
     switch (action.type) {
+
+        case 'SET_CURRENT_WORD':
         default:
             return state;
     };
