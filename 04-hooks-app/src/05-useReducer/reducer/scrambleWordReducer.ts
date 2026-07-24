@@ -97,6 +97,35 @@ export const scrambleWordsReducer = (
     switch (action.type) {
 
         case 'SET_CURRENT_WORD':
+            return { ...state, currentWord: action.payload };
+
+        case 'SET_ERROR_COUNTER':
+            return { ...state, errorCounter: action.payload };
+
+        case 'SET_GUESS':
+            return { ...state, guess: action.payload };
+
+        case 'SET_IS_GAME_OVER':
+            return { ...state, isGameOver: action.payload };
+
+        case 'SET_MAX_ALLOW_ERRORS':
+            return { ...state, maxAllowErrors: action.payload };
+
+        case 'SET_MAX_SKIPS':
+            return { ...state, maxSkips: action.payload };
+
+        case 'SET_POINTS':
+            return { ...state, points: action.payload };
+
+        case 'SET_SCRAMBLED_WORD':
+            return { ...state, scrambledWord: action.payload };
+
+        case 'SET_SKIP_COUNTER':
+            return { ...state, skipCounter: action.payload };
+
+        case 'SET_WORDS':
+            return { ...state, words: action.payload };
+
         default:
             return state;
     };
