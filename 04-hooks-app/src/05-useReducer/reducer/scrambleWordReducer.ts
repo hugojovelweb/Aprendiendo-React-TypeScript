@@ -125,14 +125,18 @@ export const scrambleWordsReducer = (
             }
 
         case 'SKIP_WORD':
-            if (state.skipCounter + 1 >= state.maxSkips) {
-                return {
-                    ...state,
-                    skipCounter: state.skipCounter + 1,
-                    isGameOver: true,
-                };
-            }
-            
+            if (state.skipCounter >= state.maxSkips) return state; // No se puede saltar más palabras
+
+            const updateWords = state.words.slice(1);
+
+            return {
+                ...state,
+                skipCounter: state.skipCounter + 1,
+                words: updateWords,
+                currentWord: updateWords[0],
+                scrambledWord: scrambleWord(updateWords[0]),
+                guess: '',
+            };
 
 
 
