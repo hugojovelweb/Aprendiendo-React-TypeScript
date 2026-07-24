@@ -123,6 +123,15 @@ export const scrambleWordsReducer = (
                     isGameOver: state.errorCounter + 1 >= state.maxAllowErrors,
                 };
             }
+
+        case 'SKIP_WORD':
+            if (state.skipCounter + 1 >= state.maxSkips) {
+                return {
+                    ...state,
+                    skipCounter: state.skipCounter + 1,
+                    isGameOver: true,
+                };
+            }
             
 
 
