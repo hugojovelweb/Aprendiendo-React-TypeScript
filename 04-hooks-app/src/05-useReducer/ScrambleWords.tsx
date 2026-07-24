@@ -76,6 +76,9 @@ export const ScrambleWords = () => {
   };
 
   const handleSkip = () => {
+    dispatch({ type: 'SKIP_WORD' });
+
+
     // if (skipCounter + 1 >= maxSkips) {
     //   console.log('No puedes saltar más palabras');
     //   return;
