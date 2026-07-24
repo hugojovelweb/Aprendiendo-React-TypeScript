@@ -83,6 +83,7 @@ export type ScrambleWordsAction =
 | { type: 'SET_GUESS'; payload: string }
 | { type: 'CHECK_ANSWER' }
 | { type: 'SKIP_WORD' }
+| { type: 'PLAY_AGAIN'; payload: ScrambleWordsState };
 
 
   
@@ -129,6 +130,12 @@ export const scrambleWordsReducer = (
                 scrambledWord: scrambleWord(updateWords[0]),
                 guess: '',
             };
+
+        case 'PLAY_AGAIN':
+            return action.payload;
+
+        default:
+            return state;
         
     };
 };
