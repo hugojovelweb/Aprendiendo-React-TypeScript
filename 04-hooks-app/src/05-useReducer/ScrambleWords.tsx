@@ -2,7 +2,7 @@
 // Es necesario componentes de Shadcn/ui
 // https://ui.shadcn.com/docs/installation/vite
 
-import React, { useReducer, useState } from 'react';
+import React, { useReducer,} from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent } from '@/components/ui/card';
@@ -28,84 +28,19 @@ export const ScrambleWords = () => {
     totalWords
   } = state;
 
-  // const [words, setWords] = useState(shuffleArray(GAME_WORDS));
-
-  // const [currentWord, setCurrentWord] = useState(words[0]);
-  // const [scrambledWord, setScrambledWord] = useState(scrambleWord(currentWord));
-  // const [guess, setGuess] = useState('');
-  // const [points, setPoints] = useState(0);
-  // const [errorCounter, setErrorCounter] = useState(0);
-  // const [maxAllowErrors, setMaxAllowErrors] = useState(3);
-
-  // const [skipCounter, setSkipCounter] = useState(0);
-  // const [maxSkips, setMaxSkips] = useState(3);
-
-  // const [isGameOver, setIsGameOver] = useState(false);
-
   const handleGuessSubmit = (e: React.FormEvent) => {
-    //   // Previene el refresh de la página
+     // Previene el refresh de la página
     e.preventDefault();
 
-    dispatch({ type: 'CHECK_ANSWER' });
-    //   // Implementar lógica de juego
-    //   //console.log('Intento de adivinanza:', guess, currentWord);
-
-    //   if (guess === currentWord) {
-    //     const newWords = words.slice(1);
-
-    //     confetti({
-    //       particleCount: 100,
-    //       spread: 70,
-    //       origin: { y: 0.6 },
-    //     });
-
-    //     setWords(newWords);
-    //     setPoints(points + 1);
-    //     setCurrentWord(newWords[0]);
-    //     setScrambledWord(scrambleWord(newWords[0]));
-    //     setGuess('');
-    //     return;
-    //   }
-
-    //   setErrorCounter(errorCounter + 1);
-    //   setGuess('');
-
-    //   if (errorCounter + 1 >= maxAllowErrors) {
-    //     setIsGameOver(true);
-    //   }
+    dispatch({ type: 'CHECK_ANSWER' });    
   };
 
   const handleSkip = () => {
     dispatch({ type: 'SKIP_WORD' });
-
-
-    // if (skipCounter + 1 >= maxSkips) {
-    //   console.log('No puedes saltar más palabras');
-    //   return;
-
-    //   const updatedWords = words.slice(1);
-
-    //   setSkipCounter(skipCounter + 1);
-    //   setWords(updatedWords);
-    //   setCurrentWord(updatedWords[0]);
-    //   setScrambledWord(scrambleWord(updatedWords [0]));
-    //   setGuess('');
-    // };
   };
 
   const handlePlayAgain = () => {
-    dispatch({ type: 'PLAY_AGAIN', payload: getInitialState() });
-
-
-    // const newArray = shuffleArray(GAME_WORDS);
-    // setPoints(0);
-    // setErrorCounter(0);
-    // setGuess('');
-    // setWords(newArray);
-    // setCurrentWord(newArray[0]);
-    // setIsGameOver(false);
-    // setSkipCounter(0);
-    // setScrambledWord(scrambleWord(newArray[0]));
+    dispatch({ type: 'PLAY_AGAIN', payload: getInitialState() });    
   };
 
   //! Si ya no hay palabras para jugar, se muestra el mensaje de fin de juego
