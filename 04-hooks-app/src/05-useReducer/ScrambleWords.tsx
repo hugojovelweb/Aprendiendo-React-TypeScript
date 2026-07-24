@@ -94,6 +94,9 @@ export const ScrambleWords = () => {
   };
 
   const handlePlayAgain = () => {
+    dispatch({ type: 'PLAY_AGAIN', payload: getInitialState() });
+
+
     // const newArray = shuffleArray(GAME_WORDS);
     // setPoints(0);
     // setErrorCounter(0);
